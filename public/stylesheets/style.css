@@ -139,7 +139,8 @@ main {
 
 .titulo-principal {
     color: var(--clr-main);
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .contenedor-productos {

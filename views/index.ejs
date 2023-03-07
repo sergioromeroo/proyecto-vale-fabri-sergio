@@ -30,6 +30,11 @@
 
                 <ul class="menu">
                     <li>
+                        <a href="/products/add">
+                        <button id="todos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb-fill"></i> Agregar un producto</button>
+                    </a>
+                    </li>
+                    <li>
                         <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
                     </li>
                     <li>
@@ -59,30 +64,64 @@
                 <button class="btn btn-outline-light" type="submit">Buscar</button>
               </form>
 
-            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
-            <div id="contenedor-productos" class="contenedor-productos">
-
+            <h2 class="titulo-principal" id="titulo-principal">Abrigos</h2>
+            <div id="contenedor-productos" class="contenedor-productos"> 
                 
-                
-               <% productos.forEach(product => { %>
+               <% abrigos.forEach(product => { %>
                 <div class="producto">
                 <img class="producto-imagen" src="../img/<%= product.imagen[0] %>" alt="fotito">
                 <div class="producto-detalles">
                     <h3 class="producto-titulo"><%= product.titulo %></h3>
                     <p class="producto-precio">$<%= product.precio %></p>
                     <button class="producto-agregar" id="${producto.id}">Agregar</button>
+                    <a href="/products/edit/<%= product.id %>"><button class="producto-agregar" >Editar</button></a>
+
                     <a href="/products/details/<%= product.id %>"><button class="producto-agregar" >Ver Mas</button></a>
                 </div>
             </div>
                <% }) %>
 
-               
-            
+            </div>
 
+            <h2 class="titulo-principal" id="titulo-principal">Camisetas</h2>
+            <div id="contenedor-productos" class="contenedor-productos"> 
+                
+               <% camisetas.forEach(product => { %>
+                <div class="producto">
+                <img class="producto-imagen" src="../img/<%= product.imagen[0] %>" alt="fotito">
+                <div class="producto-detalles">
+                    <h3 class="producto-titulo"><%= product.titulo %></h3>
+                    <p class="producto-precio">$<%= product.precio %></p>
+                    <button class="producto-agregar" id="${producto.id}">Agregar</button>
+                    <a href="/products/edit/<%= product.id %>"><button class="producto-agregar" >Editar</button></a>
 
-
+                    <a href="/products/details/<%= product.id %>"><button class="producto-agregar" >Ver Mas</button></a>
+                </div>
+            </div>
+               <% }) %>
 
             </div>
+
+            <h2 class="titulo-principal" id="titulo-principal">Pantalon</h2>
+            <div id="contenedor-productos" class="contenedor-productos"> 
+                
+               <% pantalones.forEach(product => { %>
+                <div class="producto">
+                <img class="producto-imagen" src="../img/<%= product.imagen[0] %>" alt="fotito">
+                <div class="producto-detalles">
+                    <h3 class="producto-titulo"><%= product.titulo %></h3>
+                    <p class="producto-precio">$<%= product.precio %></p>
+                    <button class="producto-agregar" id="${producto.id}">Agregar</button>
+                    <a href="/products/edit/<%= product.id %>"><button class="producto-agregar" >Editar</button></a>
+
+                    <a href="/products/details/<%= product.id %>"><button class="producto-agregar" >Ver Mas</button></a>
+                </div>
+            </div>
+               <% }) %>
+
+            </div>
+
+
         </main>
     </div>
     
