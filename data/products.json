@@ -1,12 +1,12 @@
 [
   {
     "id": "abrigo-01",
-    "titulo": "Abrigo 01",
+    "titulo": "Abrigoaaaaaaassssssssssssssssaaaa 01",
+    "categoria": "abrigos",
+    "precio": "2",
     "imagen": [
       "01.jpg"
-    ],
-    "categoria": "abrigos",
-    "precio": 1200
+    ]
   },
   {
     "id": "abrigo-02",
@@ -163,20 +163,23 @@
   },
   {
     "id": "pantalon-051",
-    "titulo": "abrigo de prueba",
-    "imagen": [
-      "default-imagen.png"
-    ],
+    "titulo": "aver si anda",
+    "imagen": "imagen-1678278942181.jpg",
     "categoria": "abrigos",
     "precio": "123123"
   },
   {
     "id": "pantalon-0511",
-    "titulo": "doctor",
-    "imagen": [
-      "default-imagen.png"
-    ],
-    "categoria": "pantalon",
+    "titulo": "aaaaaaaaa",
+    "imagen": "imagen-1678287074342.jpg",
+    "categoria": "abrigos",
     "precio": "123"
+  },
+  {
+    "id": "pantalon-05111",
+    "titulo": "eeeeeeeeeeeeeeeee",
+    "categoria": "abrigos",
+    "precio": "123123",
+    "imagen": "imagen-1678287100536.webp"
   }
 ]

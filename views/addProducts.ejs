@@ -16,7 +16,7 @@
     <div class="container">
         <div class="formulario mt-5">
             <h2>Agregar Producto</h2>
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Titulo</label>
@@ -42,7 +42,7 @@
 
                 <div class="mb-3">
                     <label for="productImagen" class="form-label">Imagen</label>
-                    <input type="file" class="form-control" id="productImagen" name="images" accept="image/*" multiple>
+                    <input type="file" class="form-control" id="productImagen" name="imagen">
                 </div>
 
                 <button class="btn btn-primary" type="submit">Guardar</button>

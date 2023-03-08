@@ -1,7 +1,7 @@
 const fs = require('fs') //necesito el fs para guardar lo de save en mi json
 const path = require('path')
 
-const productosdb = require('../data/productsdb')
+const {productosdb,guardar} = require('../data/productsdb')
 
 const categorias = require('../data/categoriasdb')
 
@@ -22,14 +22,14 @@ module.exports = {
         let producto = {
             id : productosdb[productosdb.length - 1].id + 1,
             titulo,
-            imagen : ['default-imagen.png'],
+            imagen : req.file ? req.file.filename : ['default-image.png'],
             categoria,
             precio
         }
         productosdb.push(producto)
         //return res.send(productosdb) //para verlo como json en el navegador lo nuevo q mando
     
-        fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(productosdb,null,2),'utf-8')
+        guardar
         return res.redirect('/')
     
     
@@ -45,9 +45,11 @@ module.exports = {
     },
     search : (req,res) =>{
         //res.send(req.query)
-        let resultado = productosdb.filter(producto => producto.titulo === req.query.search)//la info que recibo por GET es QUERY
+        let result = productosdb.filter(producto => producto.categoria === req.query.search)//la info que recibo por GET es QUERY
         return res.render('searchResult',{
-            resultado,
+            result,
+            productosdb,
+            busqueda : req.query.search
         })
     },
 
@@ -60,7 +62,21 @@ module.exports = {
         })
     },
     update : (req,res) =>{
-        res.send(req.body)
+        const {titulo,categoria,precio} = req.body;
+
+        let producto = productosdb.find(producto => producto.id === req.params.id)
+        let productoEditado ={
+            id : req.params.id,
+            titulo,
+            categoria,
+            precio,
+            imagen : req.file ? req.file.filename : producto.imagen
+        }
+        productoModificados = productosdb.map(producto=>producto.id === req.params.id ? productoEditado : producto)
+
+        guardar(productoModificados)
+        return res.redirect('/')
+
     }
 
 }

@@ -69,7 +69,7 @@
                 
                <% abrigos.forEach(product => { %>
                 <div class="producto">
-                <img class="producto-imagen" src="../img/<%= product.imagen[0] %>" alt="fotito">
+                <img class="producto-imagen" src="../img/<%= product.imagen[0] && product.imagen %>" alt="fotito">
                 <div class="producto-detalles">
                     <h3 class="producto-titulo"><%= product.titulo %></h3>
                     <p class="producto-precio">$<%= product.precio %></p>
@@ -88,7 +88,7 @@
                 
                <% camisetas.forEach(product => { %>
                 <div class="producto">
-                <img class="producto-imagen" src="../img/<%= product.imagen[0] %>" alt="fotito">
+                <img class="producto-imagen" src="../img/<%= product.imagen[0] && product.imagen %>" alt="fotito">
                 <div class="producto-detalles">
                     <h3 class="producto-titulo"><%= product.titulo %></h3>
                     <p class="producto-precio">$<%= product.precio %></p>
@@ -107,7 +107,7 @@
                 
                <% pantalones.forEach(product => { %>
                 <div class="producto">
-                <img class="producto-imagen" src="../img/<%= product.imagen[0] %>" alt="fotito">
+                <img class="producto-imagen" src="../img/<%= product.imagen[0] && product.imagen %>" alt="fotito">
                 <div class="producto-detalles">
                     <h3 class="producto-titulo"><%= product.titulo %></h3>
                     <p class="producto-precio">$<%= product.precio %></p>
