@@ -45,7 +45,7 @@ module.exports = {
     },
     search : (req,res) =>{
         //res.send(req.query)
-        let result = productosdb.filter(producto => producto.categoria === req.query.search)//la info que recibo por GET es QUERY
+        let result = productosdb.filter(producto => producto.titulo.toLowerCase().includes(req.query.search.toLowerCase().trim()))//la info que recibo por GET es QUERY
         return res.render('searchResult',{
             result,
             productosdb,
@@ -76,7 +76,19 @@ module.exports = {
 
         guardar(productoModificados)
         return res.redirect('/')
+        
 
+    },
+    destroy : (req,res) =>{
+         productosdb.forEach(producto => {
+            if (producto.id === req.params.id){
+                let productoEliminar = productosdb.indexOf(producto)
+                productosdb.splice(productoEliminar,1)
+            }
+        }); 
+/*         productoEliminar = productosdb.filter(producto=>producto.id !== req.params.id)
+ */        guardar
+        return res.redirect('/')
     }
 
 }

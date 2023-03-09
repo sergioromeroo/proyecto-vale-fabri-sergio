@@ -1,21 +1,12 @@
 [
   {
-    "id": "abrigo-01",
-    "titulo": "Abrigoaaaaaaassssssssssssssssaaaa 01",
-    "categoria": "abrigos",
-    "precio": "2",
-    "imagen": [
-      "01.jpg"
-    ]
-  },
-  {
     "id": "abrigo-02",
-    "titulo": "Abrigo 02",
+    "titulo": "Abrigotete 02",
+    "categoria": "abrigos",
+    "precio": "6400",
     "imagen": [
       "02.jpg"
-    ],
-    "categoria": "abrigos",
-    "precio": 1400
+    ]
   },
   {
     "id": "abrigo-03",
@@ -160,26 +151,5 @@
     ],
     "categoria": "pantalon",
     "precio": 1000
-  },
-  {
-    "id": "pantalon-051",
-    "titulo": "aver si anda",
-    "imagen": "imagen-1678278942181.jpg",
-    "categoria": "abrigos",
-    "precio": "123123"
-  },
-  {
-    "id": "pantalon-0511",
-    "titulo": "aaaaaaaaa",
-    "imagen": "imagen-1678287074342.jpg",
-    "categoria": "abrigos",
-    "precio": "123"
-  },
-  {
-    "id": "pantalon-05111",
-    "titulo": "eeeeeeeeeeeeeeeee",
-    "categoria": "abrigos",
-    "precio": "123123",
-    "imagen": "imagen-1678287100536.webp"
   }
 ]

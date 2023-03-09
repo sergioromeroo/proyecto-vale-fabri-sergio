@@ -17,7 +17,7 @@ const upload = multer({
     storage,
 })
 
-const {add,details,search, save, edit, update} = require('../controllers/productsController');
+const {add,details,search, save, edit, update, destroy} = require('../controllers/productsController');
 
 
 
@@ -29,6 +29,7 @@ router.get('/edit/:id',edit)
 router.get('/search',search)
 
 router.put('/edit/:id',update)
+router.delete('/delete/:id',destroy)
 
 
 
