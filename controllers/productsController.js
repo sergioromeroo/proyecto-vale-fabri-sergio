@@ -4,6 +4,7 @@ const path = require('path')
 const {productosdb,guardar} = require('../data/productsdb')
 
 const categorias = require('../data/categoriasdb')
+const {validationResult} = require('express-validator')
 
 module.exports = {
     add : (req,res) => {
@@ -16,8 +17,11 @@ module.exports = {
     //ruta post el save para el formulario de addproduct
     save : (req,res) => {
         //res.send(req.body) la info de POST que recibo del formulario va por BODY
+        let errors = validationResult(req);
+        //return res.send(errors)
+        if(errors.isEmpty()){
         const {titulo,categoria,precio} = req.body
-
+        
         //mi objeto literal q capturo los datos del formulario
         let producto = {
             id : productosdb[productosdb.length - 1].id + 1,
@@ -29,9 +33,16 @@ module.exports = {
         productosdb.push(producto)
         //return res.send(productosdb) //para verlo como json en el navegador lo nuevo q mando
     
-        guardar
+        guardar(productosdb)
         return res.redirect('/')
-    
+    }else{
+        return res.render('addProducts',{
+            categorias,
+            productosdb,
+            errores : errors.mapped(),//quiero mapear el errors para poder usarlo como span y dejar el msg de error
+            old : req.body//old para que me recuerde lo que escribio el usuario y no este volviendo a poner su titulo o precio o cate en el formulario
+        })
+    }
     
     },
     details : (req,res) => {

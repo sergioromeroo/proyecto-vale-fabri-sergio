@@ -16,16 +16,19 @@
     <div class="container">
         <div class="formulario mt-5">
             <h2>Agregar Producto</h2>
+            
             <form action="" method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" name="titulo">
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="titulo" value="<%= locals.old && old.titulo ? old.titulo : null %>">
+                    <span class="small text-danger"><%= locals.errores && errores.titulo ? errores.titulo.msg : null %> </span>
                 </div>
 
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Precio</label>
-                    <input type="number" class="form-control" id="formGroupExampleInput2" name="precio">
+                    <input type="number" class="form-control" id="formGroupExampleInput2" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>">
+                    <span class="small text-danger"><%= locals.errores && errores.precio ? errores.precio.msg : null %> </span>
                 </div>
 
                 <div class="mb-3">
@@ -34,9 +37,10 @@
                     <select id="category" class="form-select" name="categoria">
                         <option value="" selected hidden>Seleccione la categoría</option>
                         <% categorias.forEach(categoria=> { %>
-                            <option value="<%= categoria %>"> <%= categoria %> </option>
+                            <option value="<%= categoria %>" <%= locals.old && old.categoria === categoria ? 'selected' : null%>> <%= categoria %> </option>
                             <% }) %>
                     </select>
+                    <span class="small text-danger"><%= locals.errores && errores.categoria ? errores.categoria.msg : null %> </span>
 
                 </div>
 

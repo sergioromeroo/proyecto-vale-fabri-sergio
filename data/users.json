@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "sergio",
+    "email": "manu@gmail.com",
+    "contrasenia": "$2a$10$BfPJ4Gzv80S9RGQ7I87A5usOfmY5sj.cZze2gbZmRy51L.p6HVim."
+  },
+  {
+    "id": 2,
+    "nombre": "sergioo",
+    "email": "manolo@gmail.com",
+    "contrasenia": "$2a$10$v.V/Xj22/PTKKj5ffsEueOXbwxKdsrF9p.acWC74dmq7vMrMAiRL2"
+  }
+]

@@ -151,5 +151,14 @@
     ],
     "categoria": "pantalon",
     "precio": 1000
+  },
+  {
+    "id": "pantalon-051",
+    "titulo": "doctor",
+    "imagen": [
+      "default-image.png"
+    ],
+    "categoria": "abrigos",
+    "precio": "123123"
   }
 ]

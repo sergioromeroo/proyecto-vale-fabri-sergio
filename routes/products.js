@@ -3,6 +3,8 @@ var router = express.Router();
 const multer = require('multer')//usado para addproduct enviar img trabaja con datos o archivos
 const path = require('path')
 
+const addProductValidator = require('../validations/addProductValidator')
+
 //configurar multer para q funcione
 const storage = multer.diskStorage({
     destination : (req,file,callback) => {//donde se guarda
@@ -23,7 +25,7 @@ const {add,details,search, save, edit, update, destroy} = require('../controller
 
 router.get('/add',add);
 //post enviar datos al formulario de addproduct
-router.post('/add',upload.single('imagen'),save)
+router.post('/add',upload.single('imagen'),addProductValidator,save)
 router.get('/details/:id',details)
 router.get('/edit/:id',edit)
 router.get('/search',search)

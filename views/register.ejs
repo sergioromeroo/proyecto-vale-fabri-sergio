@@ -8,28 +8,35 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form action="" method="POST">
                     <h2>Register</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="name" required>
+                        <input type="name" name="nombre" value="<%= locals.old && locals.old.nombre ? old.nombre : null%>">
                         <label for="">Name</label>
+                        <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
                     </div>
+
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="lastname" required>
-                        <label for="">LastName</label>
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
+                        <input type="email" name="email" value="<%= locals.old && locals.old.email ? old.email : null%>">
                         <label for="">Email</label>
+                        <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span>
                     </div>
+
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" name="contrasenia">
+                        <label for="">Password</label>
+                        <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
+                    </div>
+
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="contrasenia2">
                         <label for="">Password</label>
                     </div>
+
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
                       
