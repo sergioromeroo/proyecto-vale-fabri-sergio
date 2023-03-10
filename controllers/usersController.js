@@ -16,11 +16,17 @@ module.exports = {
                 id : usuariosdb.length > 0 ? usuariosdb[usuariosdb.length - 1].id + 1 : 1,
                 nombre,
                 email,
-                contrasenia: bcrypt.hashSync(contrasenia,10)
+                contrasenia: bcrypt.hashSync(contrasenia,10),
+                rol : "user"
             }
             usuariosdb.push(usuario)
             guardar(usuariosdb)
 
+            req.session.userLogin = {
+                id : usuario.id,
+                nombre : usuario.nombre,
+                rol : usuario.rol
+            }
 
             return res.redirect('/')
         }else{
@@ -37,5 +43,28 @@ module.exports = {
 
     login : (req,res) => {
         return res.render('login')
-    }
+    },
+    processLogin : (req,res) => {
+
+        let errors = validationResult(req);
+        const {email} = req.body;
+        if(errors.isEmpty()){
+            let usuario = usuariosdb.find(usuario => usuario.email === email)
+            req.session.userLogin = {
+                id : usuario.id,
+                nombre : usuario.nombre,
+                rol : usuario.rol
+            }
+
+/*             if(recordar){
+                res.cookie('airesAcondicionado',req.session.userLogin,{maxAge: 1000 * 60})
+            } */
+            return res.redirect('/')
+        }else{
+            return res.render('login',{
+                
+                errores : errors.mapped()
+            })
+        }
+    },
 }

@@ -98,7 +98,7 @@ module.exports = {
             }
         }); 
 /*         productoEliminar = productosdb.filter(producto=>producto.id !== req.params.id)
- */        guardar
+ */        guardar(productosdb)
         return res.redirect('/')
     }
 

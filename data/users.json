@@ -10,5 +10,26 @@
     "nombre": "sergioo",
     "email": "manolo@gmail.com",
     "contrasenia": "$2a$10$v.V/Xj22/PTKKj5ffsEueOXbwxKdsrF9p.acWC74dmq7vMrMAiRL2"
+  },
+  {
+    "id": 3,
+    "nombre": "manu",
+    "email": "manu@gmail.com",
+    "contrasenia": "$2a$10$Wu1PITbABn6LSkW42yFS1e2q9Vp95XF3m.Jhqud3LF4YP5PdTyADe",
+    "rol": "user"
+  },
+  {
+    "id": 4,
+    "nombre": "manolo",
+    "email": "manolo2@gmail.com",
+    "contrasenia": "$2a$10$vElFLcRjlpMmLWGnUOTh0eg6rppWEocL1wn6A2yTCydgBnSzknWtK",
+    "rol": "user"
+  },
+  {
+    "id": 5,
+    "nombre": "",
+    "email": "",
+    "contrasenia": "$2a$10$nD0kwkdnirsUj9PkaX/S6.eXWDNu5MU2jmwbd7MXKdW2ySn3AJ4bG",
+    "rol": "user"
   }
 ]

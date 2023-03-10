@@ -153,12 +153,24 @@
     "precio": 1000
   },
   {
-    "id": "pantalon-051",
-    "titulo": "doctor",
-    "imagen": [
-      "default-image.png"
-    ],
+    "id": "pantalon-0511",
+    "titulo": "mouse",
+    "categoria": "camisetas",
+    "precio": "123",
+    "imagen": "imagen-1678456669434.webp"
+  },
+  {
+    "id": "pantalon-05111",
+    "titulo": "casa",
+    "imagen": "imagen-1678458032228.gif",
+    "categoria": "pantalones",
+    "precio": "123"
+  },
+  {
+    "id": "pantalon-051111",
+    "titulo": "harry",
+    "imagen": "imagen-1678458061528.jpg",
     "categoria": "abrigos",
-    "precio": "123123"
+    "precio": "123"
   }
 ]

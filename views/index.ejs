@@ -24,6 +24,16 @@
                 <a href="/users/login"><h2 class="logo">Login</h2></a>
                 
                 <a href="/users/register"><h2 class="logo">register</h2></a>
+
+                <% if (locals.userLogin) { %>
+                    <% if (locals.userLogin.rol === "user") { %>
+                    <a href="#"><h2 class="logo">USUARIO LOGEADO PAA</h2></a>
+                    <H2><%= locals.userLogin.nombre %></H2>
+                    <% } %>
+
+                    <a href="#"><h2 class="logo">USUARIO LOGEADO PAA</h2></a>
+                    <H2><%= locals.userLogin.nombre %></H2>
+                <% } %>
                 
             </header>
             <nav>
@@ -95,7 +105,7 @@
                     <p class="producto-precio">$<%= product.precio %></p>
                     <button class="producto-agregar" id="${producto.id}">Agregar</button>
                     <a href="/products/edit/<%= product.id %>"><button class="producto-agregar" >Editar</button></a>
-
+                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"><button class="producto-agregar" >Eliminar</button></form>
                     <a href="/products/details/<%= product.id %>"><button class="producto-agregar" >Ver Mas</button></a>
                 </div>
             </div>
@@ -114,7 +124,7 @@
                     <p class="producto-precio">$<%= product.precio %></p>
                     <button class="producto-agregar" id="${producto.id}">Agregar</button>
                     <a href="/products/edit/<%= product.id %>"><button class="producto-agregar" >Editar</button></a>
-
+                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"><button class="producto-agregar" >Eliminar</button></form>
                     <a href="/products/details/<%= product.id %>"><button class="producto-agregar" >Ver Mas</button></a>
                 </div>
             </div>
