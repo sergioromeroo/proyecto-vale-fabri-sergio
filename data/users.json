@@ -27,9 +27,9 @@
   },
   {
     "id": 5,
-    "nombre": "",
-    "email": "",
-    "contrasenia": "$2a$10$nD0kwkdnirsUj9PkaX/S6.eXWDNu5MU2jmwbd7MXKdW2ySn3AJ4bG",
-    "rol": "user"
+    "nombre": "taty",
+    "email": "taty@gmail.com",
+    "contrasenia": "$2a$10$ZU.P8qMiM9fV2VqUJMM5wO971tOjZ8wNQBxHvRVkmuoAkB/8i5F7y",
+    "rol": "admin"
   }
 ]

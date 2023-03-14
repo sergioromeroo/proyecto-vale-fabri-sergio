@@ -21,19 +21,39 @@
             </button>
             <header>
                 <h1 class="logo">CarpiShop</h1>
-                <a href="/users/login"><h2 class="logo">Login</h2></a>
+
                 
-                <a href="/users/register"><h2 class="logo">register</h2></a>
 
-                <% if (locals.userLogin) { %>
-                    <% if (locals.userLogin.rol === "user") { %>
-                    <a href="#"><h2 class="logo">USUARIO LOGEADO PAA</h2></a>
-                    <H2><%= locals.userLogin.nombre %></H2>
-                    <% } %>
-
-                    <a href="#"><h2 class="logo">USUARIO LOGEADO PAA</h2></a>
-                    <H2><%= locals.userLogin.nombre %></H2>
-                <% } %>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+         
+                    <% if (locals.userLogin) { %>
+                      <% if (locals.userLogin.rol === "admin") { %>
+                        <li class="nav-item dropdown">
+     
+                            <h4>bienvenido administrador :  <%= locals.userLogin.nombre %></h4>
+                          <li>
+                            <a href="/products/add">
+                            <button id="todos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb-fill"></i> Agregar un producto</button>
+                        </a>
+                        </li>
+                        </li>
+                      <% } %>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><%= locals.userLogin.nombre %> </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">cerrar sesión</a>
+                      </li>
+                    <% }else{ %>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/users/login">login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/users/register">registro</a>
+                        </li>
+                        <% } %>
+                  </ul>
                 
             </header>
             <nav>

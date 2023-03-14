@@ -5,6 +5,9 @@ const path = require('path')
 
 const addProductValidator = require('../validations/addProductValidator')
 
+/* middlewares */
+const adminUserCheck = require('../middlewares/adminUserCheck');
+
 //configurar multer para q funcione
 const storage = multer.diskStorage({
     destination : (req,file,callback) => {//donde se guarda
@@ -23,7 +26,7 @@ const {add,details,search, save, edit, update, destroy} = require('../controller
 
 
 
-router.get('/add',add);
+router.get('/add',adminUserCheck,add);
 //post enviar datos al formulario de addproduct
 router.post('/add',upload.single('imagen'),addProductValidator,save)
 router.get('/details/:id',details)
